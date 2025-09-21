@@ -1,0 +1,16 @@
+decimal _x2 = 0.23;
+
+_x2 = _x2 / 12;
+
+if (_x2 < 0.01) 
+{ 
+	while (_x2 > 0) 
+	{ 
+		_x2 = _x2 - 0.001 
+	}; 
+	return true; 
+} 
+else 
+{ 
+	return false; 
+};
