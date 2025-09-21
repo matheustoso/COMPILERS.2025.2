@@ -1,5 +1,4 @@
 ﻿using System.Text.RegularExpressions;
-using Lexer.Domain.Constants;
 using Lexer.Domain.Enum;
 
 namespace Lexer.Domain.Entities

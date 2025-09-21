@@ -45,7 +45,7 @@ namespace Lexer.Domain.Entities
                     TokenTypeValue.LEFT_BRACE => Delimiters.LeftBrace,
                     TokenTypeValue.RIGHT_BRACE => Delimiters.RightBrace,
                     TokenTypeValue.SEMICOLON => Delimiters.Semicolon,
-                    TokenTypeValue.ILLEGAL => TokenTypeValue.ILLEGAL.ToString(),
+                    TokenTypeValue.NEW_LINE => TokenTypeValue.NEW_LINE.ToString(),
                     _ => string.Empty
                 };
 

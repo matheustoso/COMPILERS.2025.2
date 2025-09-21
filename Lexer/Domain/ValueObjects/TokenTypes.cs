@@ -6,7 +6,6 @@ namespace Lexer.Domain.ValueObjects
 {
     public class TokenTypes
     {
-        public static readonly TokenType Illegal = new(TokenTypeValue.ILLEGAL);
         public static readonly TokenType Keyword = new(Patterns.Keyword(), TokenTypeValue.KEYWORD);
         public static readonly TokenType Id = new(Patterns.Id(), TokenTypeValue.ID);
 

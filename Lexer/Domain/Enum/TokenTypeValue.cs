@@ -2,7 +2,6 @@
 {
     public enum TokenTypeValue
     {
-        ILLEGAL,
         KEYWORD,
         ID,
 

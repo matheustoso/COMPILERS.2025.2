@@ -1,5 +1,4 @@
-﻿using System.Text.RegularExpressions;
-using Lexer.Domain.Constants;
+﻿using Lexer.Domain.Constants;
 using Lexer.Domain.Entities;
 using Lexer.Domain.Entities.Result;
 using Lexer.Domain.ValueObjects;

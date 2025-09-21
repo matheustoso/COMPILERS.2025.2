@@ -7,6 +7,5 @@
         internal const string LeftBrace = "{";
         internal const string RightBrace = "}";
         internal const string Semicolon = ";";
-
     }
 }

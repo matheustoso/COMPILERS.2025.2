@@ -1,6 +1,4 @@
-﻿using Lexer.Domain.ValueObjects;
-
-namespace Lexer.Domain.Entities
+﻿namespace Lexer.Domain.Entities
 {
     public class Context
     {

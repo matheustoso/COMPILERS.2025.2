@@ -4,8 +4,6 @@ namespace Lexer.Domain.ValueObjects
 {
     public class Tokens
     {
-        public static readonly Token Illegal = new(TokenTypes.Illegal);
-
         public static readonly Token Assign = new(TokenTypes.Assign);
         public static readonly Token Equal = new(TokenTypes.Equal);
         public static readonly Token NotEqual = new(TokenTypes.NotEqual);
