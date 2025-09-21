@@ -38,8 +38,7 @@
 
         #region Whitespace
         EMPTY,
-        NEW_LINE,
-        END_OF_FILE
+        NEW_LINE
         #endregion
     }
 }

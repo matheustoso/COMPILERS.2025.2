@@ -43,7 +43,6 @@ namespace Lexer.Domain.ValueObjects
         #region Whitespace
         public static readonly TokenType Empty = new(Patterns.Empty(), TokenTypeValue.EMPTY);
         public static readonly TokenType NewLine = new(Patterns.NewLine(), TokenTypeValue.NEW_LINE);
-        public static readonly TokenType EndOfFile = new(TokenTypeValue.END_OF_FILE);
         #endregion
     }
 }

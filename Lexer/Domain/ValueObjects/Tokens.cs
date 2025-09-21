@@ -27,6 +27,5 @@ namespace Lexer.Domain.ValueObjects
 
         public static readonly Token Empty = new(TokenTypes.Empty);
         public static readonly Token NewLine = new(TokenTypes.NewLine);
-        public static readonly Token EndOfFile = new(TokenTypes.EndOfFile);
     }
 }
