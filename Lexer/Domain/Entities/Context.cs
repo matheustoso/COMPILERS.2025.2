@@ -2,6 +2,22 @@
 {
     public class Context
     {
+        public void Advance(char? current)
+        {
+            Index++;
+
+            if (current is '\n')
+            {
+                Line++;
+                Column = 0;
+            }
+            else
+            {
+                Column++;
+            }
+        }
+
+        public Context Copy() => new(Index, Line, Column, FileName);
         public int Index { get; set; } 
         public int Line { get; set; } 
         public int Column { get; set; }
@@ -15,20 +31,6 @@
             FileName = fileName;
         }
 
-        public void Advance(char? current)
-        {
-            Index++;
 
-            if (current is '\n')
-            {
-                Line++;
-                Column = 0;
-            } else
-            {
-                Column++;
-            }
-        }
-
-        public Context Copy() => new(Index, Line, Column, FileName);
     }
 }

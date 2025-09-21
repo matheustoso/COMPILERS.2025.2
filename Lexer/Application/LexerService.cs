@@ -16,6 +16,7 @@ namespace Lexer.Application
                 var context = new Context(-1, 0, -1, fileName);
                 var current = NextChar(content, context);
 
+                //Match de Padrões
                 while (current.HasValue)
                 {
                     if (Patterns.Empty().IsMatch(current.Value.ToString()))
@@ -169,9 +170,9 @@ namespace Lexer.Application
             char? nextChar = NextChar(content, context, current);
 
             if (TokenTypes.Equal.Pattern.IsMatch(lexeme + nextChar))
-                return (tokens.Append(new(TokenTypes.Equal, lexeme + nextChar)), NextChar(content, context, current));
+                return (tokens.Append(Tokens.Equal), NextChar(content, context, current));
 
-            return (tokens.Append(new(TokenTypes.Assign, lexeme)), nextChar);
+            return (tokens.Append(Tokens.Assign), nextChar);
         }
 
         private static (IEnumerable<Token> tokens, char? current) ResolveNotOrNotEqual(string content, Context context, char current, IEnumerable<Token> tokens)
@@ -180,9 +181,9 @@ namespace Lexer.Application
             char? nextChar = NextChar(content, context, current);
 
             if (TokenTypes.NotEqual.Pattern.IsMatch(lexeme + nextChar))
-                return (tokens.Append(new(TokenTypes.NotEqual, lexeme + nextChar)), NextChar(content, context, current));
+                return (tokens.Append(Tokens.NotEqual), NextChar(content, context, current));
 
-            return (tokens.Append(new(TokenTypes.Not, lexeme)), nextChar);
+            return (tokens.Append(Tokens.Not), nextChar);
         }
 
         private static (IEnumerable<Token> tokens, char? current) ResolveLargerOrLargerEqual(string content, Context context, char current, IEnumerable<Token> tokens)
@@ -191,9 +192,9 @@ namespace Lexer.Application
             char? nextChar = NextChar(content, context, current);
 
             if (TokenTypes.LargerEqual.Pattern.IsMatch(lexeme + nextChar))
-                return (tokens.Append(new(TokenTypes.LargerEqual, lexeme + nextChar)), NextChar(content, context, current));
+                return (tokens.Append(Tokens.LargerEqual), NextChar(content, context, current));
 
-            return (tokens.Append(new(TokenTypes.Larger, lexeme)), nextChar);
+            return (tokens.Append(Tokens.Larger), nextChar);
         }
 
         private static (IEnumerable<Token> tokens, char? current) ResolveSmallerOrSmallerEqual(string content, Context context, char current, IEnumerable<Token> tokens)
@@ -202,9 +203,9 @@ namespace Lexer.Application
             char? nextChar = NextChar(content, context, current);
 
             if (TokenTypes.SmallerEqual.Pattern.IsMatch(lexeme + nextChar))
-                return (tokens.Append(new(TokenTypes.SmallerEqual, lexeme + nextChar)), NextChar(content, context, current));
+                return (tokens.Append(Tokens.SmallerEqual), NextChar(content, context, current));
 
-            return (tokens.Append(new(TokenTypes.Smaller, lexeme)), nextChar);
+            return (tokens.Append(Tokens.Smaller), nextChar);
         }
 
         private static (IEnumerable<Token> tokens, char? current) ResolveToken(Token token, string content, Context context, char current, IEnumerable<Token> tokens)

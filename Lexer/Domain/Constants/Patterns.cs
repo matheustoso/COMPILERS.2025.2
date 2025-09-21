@@ -4,7 +4,7 @@ namespace Lexer.Domain.Constants
 {
     internal static partial class Patterns
     {
-        [GeneratedRegex(@"if|else|while|for|int|decimal|string|void|null|return|true|false")]
+        [GeneratedRegex(@"^(if|else|while|for|int|decimal|string|void|null|return|true|false)$")]
         internal static partial Regex Keyword();
 
         [GeneratedRegex(@"^([a-zA-Z_][a-zA-Z0-9_]*)$")]
@@ -48,22 +48,17 @@ namespace Lexer.Domain.Constants
         [GeneratedRegex($@"^({Operators.Subtract})$")]
         internal static partial Regex Subtract();
 
-
         [GeneratedRegex($@"^({Operators.Divide})$")]
         internal static partial Regex Divide();
-
 
         [GeneratedRegex($@"^(\{Operators.Multiply})$")]
         internal static partial Regex Multiply();
 
-
         [GeneratedRegex($@"^({Operators.And})$")]
         internal static partial Regex And();
 
-
         [GeneratedRegex($@"^(\{Operators.Or})$")]
         internal static partial Regex Or();
-
 
         [GeneratedRegex($@"^({Operators.Not})$")]
         internal static partial Regex Not();

@@ -38,11 +38,11 @@ while (command != "3")
 
         var result = LexerService.Analyze(filepath, content);
 
-        foreach (var token in result.Tokens)
-            Console.WriteLine(token.ToString());
+        Console.WriteLine(result.ToString());
 
         if (!result.IsValid())
             Console.WriteLine(result.Error?.ToString());
+
     } else if (command == "3") 
         Console.WriteLine("Exiting.");
     else

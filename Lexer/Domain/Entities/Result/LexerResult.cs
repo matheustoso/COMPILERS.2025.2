@@ -12,5 +12,13 @@
         }
 
         public bool IsValid() => Error is null;
+
+        public override string ToString()
+        {
+            var str = string.Empty;
+            foreach (var token in Tokens)
+                str += token.ToString() + "\n";
+            return str;
+        }
     }
 }
