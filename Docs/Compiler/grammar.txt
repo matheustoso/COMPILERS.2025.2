@@ -1,0 +1,40 @@
+statements ::= newLine* <expression> (newLine+ <expression>)* newLine*
+
+expression ::= var:key id assign <expressao>
+            |  <logical-expression> question <logical-expression> colon <logical-expression>
+            |  <logical-expression> ( or | xor ) <logical-expression>
+            |  <logical-expression>
+
+logical-expression ::= <relational-expression> and <relational-expression>
+                    |  <logical-expression> and <relational-expression>
+                    |  <logical-expression> and <logical-expression>
+
+
+relational-expression ::= NEGACAO <relational-expression>
+                       |  <arithmetic-expression> ( == | != | > | < | >= | <= ) <arithmetic-expression>
+                       |  <arithmetic-expression> ( == | != | > | < | >= | <= ) <relational-expression>
+                       |  <relational-expression> ( == | != | > | < | >= | <= ) <relational-expression>
+
+arithmetic-expression ::= <term> ( + | - ) <term>
+                       |  <arithmetic-expression> ( + | - ) <term>
+                       |  <arithmetic-expression> ( + | - ) <arithmetic-expression>
+
+term ::= <operand> ( * | / ) <operand>
+      |  <term> ( * | / ) <operand>
+      |  <term> ( * | / ) <term>
+      |  <power>
+
+potencia ::= <call> (pow <term>)
+
+call ::= <operand>
+      |  <operand> lPar ((<expression> (comma <expression>)*?) rPar
+
+operand ::= num | id
+          |  ( + | - ) operand
+          |  lPar <term> rPar
+          |  lPar <expression> rPar
+          |  for
+          
+for ::= for:key id assign <expression> to:key <expression> (increment:key <expression>)? then:key
+        <expression>
+     |  (newLine <statements> end:key)

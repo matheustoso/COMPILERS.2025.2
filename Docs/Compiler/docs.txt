@@ -1,0 +1,75 @@
+variables:
+    assign and update: var name = value
+    access: name
+    notes: - the value can be written as a complex expression
+    
+built-in variables:
+    true: 1
+    false: 0
+    
+arithmetic operations:
+    sum: x + y
+    subtraction: x - y
+    multiplication: x * y
+    division: x / y
+    power: x^y
+    negative: -x
+    positive: +x
+    notes: - the values (x, y) can be written as a complex expression
+    
+logical operations:
+    and: x & y
+    or: x | y
+    xor: x # y
+    not: !x
+    notes: - the values (x, y) can be written as a complex expression
+    
+relational operations:
+    equals: x == y
+    different: x != y
+    greater: x > y
+    smaller: x < y
+    greaterEquals: x >= y
+    smallerEquals: x <= y
+    notes: - the values (x, y) can be written as a complex expression
+    
+built-in functions:
+    if: if the condition is true returns the true parameter, otherwise returns the false parameter
+        syntax: if(condition,true,false)
+    sum: returns the sum of the parametes
+        syntax: sum(x,y,z,...,n)
+    avg: returns the average of the parametes
+        syntax: avg(x,y,z,...,n)
+    max: returns the largest of the parametes
+        syntax: max(x,y,z,...,n)
+    min: returns the smallest of the parametes
+        syntax: min(x,y,z,...,n)
+    abs: returns the absolute value of x
+        syntax: abs(x)
+    sqrt: returns the square root of x
+        syntax: sqrt(x)
+    rand: returns a random number with a max value of x
+        syntax: rand(x)
+    notes: - all parameters can be written as a complex expression
+    
+    
+ternary:
+    syntax: condition ? true : false
+    notes: - all ternary operands can be written as complex expressions
+
+for:
+    syntax: for i = initialValue to finalValue then expression
+          | for i = initialValue to finalValue increment value then expression
+          | for i = initialValue to finalValue then
+                expression
+                ...
+            end
+          | for i = initialValue to finalValue increment value then
+                expression
+                ...
+            end
+    notes: - increment keyword is optional, default is +1
+           - negative increments are accepted, and will cause the for to check if the initial value is greater than the final value
+           - all for operands (initial value, final value, increment) can be written as complex expressions
+
+    

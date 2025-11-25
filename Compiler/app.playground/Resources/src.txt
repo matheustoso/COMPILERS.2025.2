@@ -1,0 +1,29 @@
+var a = rand(100)
+var b = rand(100)
+ a>b ? a-b : b-a
+
+var pi = 3.14
+var r = 10
+var C = 2*pi*r
+var A = pi*r^2
+
+var loopCount = 0
+
+for i = C to A increment r then
+    var loopCount = loopCount + 1
+end
+
+loopCount
+
+var k = -100
+var result = 0
+
+var loopCount = 0
+
+for i = 0 to -100 increment -5 then
+    var loopCount = loopCount + 1
+    var result = sum(result,avg(result,k))
+end
+
+loopCount
+result
